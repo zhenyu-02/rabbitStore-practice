@@ -7,6 +7,8 @@ import App from './App.vue'
 import router from './router'
 
 
+import '@/styles/common.scss'
+
 import {getCategory} from '@/apis/testAPI'
 
 getCategory().then(res => {
@@ -18,3 +20,4 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
