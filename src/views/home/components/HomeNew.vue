@@ -5,12 +5,12 @@ import {ref, onMounted} from 'vue'
 
 const newList = ref([])
 
-const getNewList = async () => {
-  const res = await findNewAPI()
-  newList.value  = res.result
-  // console.log(res);
+const getList = async () => {
+  const resNew = await findNewAPI()
+  newList.value  = resNew.result
+
 }
-onMounted(() => getNewList())
+onMounted(() => getList())
 
 
 </script>
@@ -28,6 +28,8 @@ onMounted(() => getNewList())
   </ul>
 
   </HomePanel>
+
+
 
 </template>
 
