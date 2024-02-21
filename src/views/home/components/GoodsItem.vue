@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  goods:{
+  good:{
     type:Object,
     default: () => {}
   }
@@ -51,4 +51,5 @@ defineProps({
         color: $priceColor;
         font-size: 20px;
       }
-    }</style>
+    }
+  </style>
