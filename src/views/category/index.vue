@@ -4,17 +4,24 @@ import {ref, onMounted} from 'vue'
 import {useRoute} from 'vue-router'
 import {getBannerAPI} from '@/apis/home'
 import GoodsItem from '@/views/home/components/GoodsItem.vue'
+import {onBeforeRouteUpdate} from 'vue-router'
 
 
 const categoryData = ref({})
 const route = useRoute()
-const getCategory = async () => {
-  const res = await getCategoryAPI(route.params.id)
+const getCategory = async (id = route.params.id) => {
+  const res = await getCategoryAPI(id)
   categoryData.value = res.result
-  console.log(categoryData.value.name);
+  console.log(categoryData.value);
 }
 //watch the value of id Instead of onMounted
 onMounted(() => getCategory())
+
+onBeforeRouteUpdate((to) => {
+  // console.log("router changed");
+  // console.log(to);
+  getCategory(to.params.id)
+})
 
 const bannerList = ref([])
 
@@ -65,7 +72,7 @@ onMounted(() => getBanner())
           <h3>- {{ item.name }}-</h3>
         </div>
         <div class="body">
-          <GoodsItem v-for="good in item.goods" :goods="good" :key="good.id" />
+          <GoodsItem v-for="good in item.goods" :good="good" :key="good.id" />
         </div>
       </div>
 
