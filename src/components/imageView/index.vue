@@ -33,8 +33,8 @@ const top = ref(0)
 const posX = ref(0)
 const posY = ref(0)
 watchArray([elementX, elementY, isOutside], () => {
-  if (!isOutside) return 
-  console.log(('Mouse is Moving'));
+  // if (isOutside) return 
+  // console.log(('Mouse is Moving'));
   if (elementX.value > 100 && elementX.value<300) {
     left.value = elementX.value-100
   }
