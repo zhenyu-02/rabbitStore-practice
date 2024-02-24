@@ -3,8 +3,8 @@ import {getDetail} from '@/apis/detail.js'
 import {useRoute} from 'vue-router'
 import {ref,onMounted} from 'vue'
 import DetailHot from './components/DetailHot.vue'
-import ImageView from '@/components/imageView/index.vue'
-import XtxSku from '@/components/XtxSku/index.vue'
+// import ImageView from '@/components/imageView/index.vue'
+// import XtxSku from '@/components/XtxSku/index.vue'
 
 const route = useRoute()
 const goods = ref({})
