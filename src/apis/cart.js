@@ -26,3 +26,11 @@ export function delCartAPI(ids) {
     }
   })
 }
+
+export function mergeCartAPI(data) {
+  return request({
+    url:'/member/cart/merge',
+    method:'POST',
+    data
+  })
+}
