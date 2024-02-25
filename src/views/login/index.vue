@@ -340,4 +340,4 @@ const doLogin =  () => {
   width: 100%;
   color: #fff;
 }
-</style>
+</style>@/stores/userStore

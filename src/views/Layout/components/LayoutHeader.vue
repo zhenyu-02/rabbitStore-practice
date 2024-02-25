@@ -135,4 +135,4 @@ const categoryStore = usecategoryStore()
     }
   }
 }
-</style>
+</style>@/stores/categoryStore.js

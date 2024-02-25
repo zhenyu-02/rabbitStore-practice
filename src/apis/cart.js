@@ -16,3 +16,13 @@ export function findNewCartList() {
     url:'/member/cart',
   })
 }
+
+export function delCartAPI(ids) {
+  return request({
+    url:'/member/cart',
+    method:'DELETE',
+    data:{
+      ids
+    }
+  })
+}

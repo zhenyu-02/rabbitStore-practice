@@ -21,4 +21,4 @@ onMounted(() => {
 
   <LayoutFooter />
   <LayoutFixed/>
-</template>
+</template>@/stores/categoryStore
