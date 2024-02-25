@@ -2,6 +2,10 @@ import axios from "axios";
 import 'element-plus/theme-chalk/el-message.css'
 import { ElMessage } from 'element-plus'
 import {useUserStore} from '@/stores/user'
+// import {useRouter} from 'vue-router'
+import router from '@/router/index'
+
+
 
 
 const httpInstance = axios.create({
@@ -26,6 +30,13 @@ httpInstance.interceptors.response.use(res => res.data, e => {
     type:'warning',
     message: e.response.data.message
   })
+  if (e.response.status === 401) {
+    // console.log();
+    const userStore = useUserStore()
+    userStore.clearUserInfo()
+    router.push('/login')
+
+  }
 
   return Promise.reject(e)
 })
