@@ -5,7 +5,7 @@ import LayoutFooter from './components/LayoutFooter.vue'
 import LayoutFixed from './components/LayoutFixed.vue'
 
 import {onMounted} from 'vue'
-import { usecategoryStore } from '@/stores/category'
+import { usecategoryStore } from '@/stores/categoryStore'
 const categoryStore = usecategoryStore()
 
 onMounted(() => {

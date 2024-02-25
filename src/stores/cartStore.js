@@ -44,6 +44,9 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
+  const clearCart = () => {
+    cartList.value = []
+  }
 
 
 
@@ -73,7 +76,8 @@ export const useCartStore = defineStore('cart', () => {
     addCart,
     delCart,
     singleCheck,
-    allCheck
+    allCheck,
+    clearCart
   }
 
 }, {persist:true})
