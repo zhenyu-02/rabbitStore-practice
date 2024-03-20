@@ -11,13 +11,11 @@ export const lazyPlugin = {
           ([{ isIntersecting }], ) => {
             // console.log(isIntersecting);
             if (isIntersecting) {
-            
-            el.src = binding.value
-            stop()
+              el.src = binding.value
+              stop()
            }
           },
         )
-    
       }
     })
   }

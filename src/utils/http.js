@@ -15,15 +15,15 @@ const httpInstance = axios.create({
 
 // axios请求拦截器
 httpInstance.interceptors.request.use(config => {
-const userStore = useUserStore()
-const token = userStore.userInfo.token
-if (token) {
-  config.headers.Authorization = `Bearer ${token}`
-}
-  return config
+  const userStore = useUserStore()
+  const token = userStore.userInfo.token
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+    return config
 }, e => Promise.reject(e))
 
-// axios响应式拦截器
+// axios响应拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
   console.log(e);
   ElMessage({
