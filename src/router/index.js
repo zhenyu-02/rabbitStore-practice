@@ -13,7 +13,7 @@ import UserInfo from '@/views/Member/components/Userinfo.vue'
 import UserOrder from '@/views/Member/components/Userorder.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path:'/',
