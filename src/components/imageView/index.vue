@@ -64,7 +64,7 @@ watchArray([elementX, elementY, isOutside], () => {
 
 
 <template>
-  {{ {elementX, elementY, isOutside} }}
+  <!-- {{ {elementX, elementY, isOutside} }} -->
   <div class="goods-image">
     <!-- 左侧大图-->
     <div class="middle" ref="target">

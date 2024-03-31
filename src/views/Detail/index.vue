@@ -12,10 +12,10 @@ const cartStore = useCartStore()
 const route = useRoute()
 const goods = ref({})
 const getGoods = async () => {
-  console.log('begin get goods');
+  // console.log('begin get goods');
   const res = await getDetail(route.params.id)
   goods.value = res.result
-  console.log(goods.value);
+  // console.log(goods.value);
 }
 onMounted(() => getGoods())
 
@@ -26,9 +26,6 @@ const skuChange = (sku) => {
 }
 
 const count = ref(1)
-const countChange = (count)=>{
-  console.log(count);
-}
 
 const addCart = () => {
   if (skuObj.skuId) {
@@ -120,7 +117,7 @@ const addCart = () => {
               <!-- sku组件 -->
               <XtxSku :goods="goods" @change="skuChange"/>
               <!-- 数据组件 -->
-              <el-input-number v-model="count" @change="countChange" />
+              <el-input-number v-model="count"  />
               <!-- 按钮组件 -->
               <div>
                 <el-button size="large" class="btn" @click="addCart">
@@ -146,7 +143,7 @@ const addCart = () => {
                     </li>
                   </ul>
                   <!-- 图片 -->
-                  <img v-for="img in goods.details.pictures" :src="img" :key="img" alt=""/>
+                  <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img" alt=""/>
 
                 </div>
               </div>

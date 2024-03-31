@@ -11,7 +11,7 @@ export function useCategory() {
   const getCategory = async (id = route.params.id) => {
     const res = await getCategoryAPI(id)
     categoryData.value = res.result
-    console.log(categoryData.value);
+    // console.log(categoryData.value);
   }
   //watch the value of id Instead of onMounted
   onMounted(() => getCategory())

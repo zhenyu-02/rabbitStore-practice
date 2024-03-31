@@ -26,6 +26,7 @@ const getGoodList = async () => {
   // categoryData.value = res.result
   // console.log(res);
   goodList.value = res.result.items
+  // console.log(goodList.value);
 }
 onMounted(() => getGoodList())
 

@@ -1,9 +1,10 @@
 <script setup>
 import HomePanel from './HomePanel.vue'
 import { getHotAPI } from '@/apis/home'
-import { ref } from 'vue'
+import {  ref } from 'vue'
 const hotList = ref([])
 const getHotList = async () => {
+  // 数据获取是在创建阶段进行的
   const res = await getHotAPI()
   hotList.value = res.result
 }
